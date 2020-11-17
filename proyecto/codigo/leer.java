@@ -5,20 +5,27 @@ import java.io.FileNotFoundException;
 
 public class leer
 {
-    ArrayList<String> info = new ArrayList<>(); 
+    ArrayList<String> datos = new ArrayList<>();
+    
+    //lee el archivo y crea un arraylist con cada linea
     public void leerArchivo(String nombreArchivo) throws FileNotFoundException {
         Scanner archivo = new Scanner(new File(nombreArchivo));
+        archivo.nextLine();
         while(archivo.hasNextLine()) {
             String linea = archivo.nextLine();
-            info.add(linea);
+            datos.add(linea);
         }
     }
+    
+    //imprime el arraylist
     public void imprimirArchivo(){
-        for(int i = 0; i<info.size(); i++){
-            System.out.println(info.get(i));
+        for(int i = 0; i<datos.size(); i++){
+            System.out.println(datos.get(i));
         }
     }
-    public ArrayList<String> getInfo(){
-        return info;
+    
+    //devuelve el arraylist
+    public ArrayList<String> getDatos(){
+        return datos;
     }
 }
